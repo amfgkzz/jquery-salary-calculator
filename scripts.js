@@ -101,10 +101,13 @@ function testFun(){
 // test function two
 function testFunner() {
 
-    for (let i = 0; i < arrayTotal.length; i++) {
-        const element = array[i];
-        
-        
-    }
+    newTotal = arrayTotal.reduce(function(a,b){
+        let testOne = (parseInt(a) * 1);
+        let testTwo = (parseInt(b) * 1);
+        let testRun = Math.round(testOne + testTwo);
+        console.log(testRun);
+    })
+
+
 
 }
