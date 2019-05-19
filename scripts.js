@@ -11,16 +11,22 @@ function readyNow() {
 // Function for on click submit button
 function onSubmit() {
 
-    const inputFirstName = $('#inputOne').val();
-    const inputLastName = $('#inputTwo').val();
-    const inputIDnumber = $('#inputThree').val();
-    const inputJobTitle = $('#inputFour').val();
-    const inputAnnualSalary = $('#inputFive').val();
+    // Ask to input all information before running
+    if ($('.inputData').val() == '') {
+        alert('Please fill in all the empty fields');
+    }
+    else {
 
-    // Adding a table row
+        const inputFirstName = $('#inputOne').val();
+        const inputLastName = $('#inputTwo').val();
+        const inputIDnumber = $('#inputThree').val();
+        const inputJobTitle = $('#inputFour').val();
+        const inputAnnualSalary = $('#inputFive').val();
 
-    $('.table-body').append
-        (`
+        // Adding a table row
+
+        $('.table-body').append
+            (`
         <tr>
             <td>` + inputFirstName + `</td>
             <td>` + inputLastName + `</td>
@@ -31,14 +37,15 @@ function onSubmit() {
         </tr>
         `)
 
-    // Delete all data stored in the inputs
+        // Delete all data stored in the inputs
 
-    $('.inputData').val('');
+        $('.inputData').val('');
 
-    // Run totalMonthly function
+        // Run totalMonthly function
 
-    totalMonthly(inputAnnualSalary);
+        totalMonthly(inputAnnualSalary);
 
+    }
 } // End function for on click submit button
 
 // Function for on click delete button
@@ -54,8 +61,9 @@ function onDelete() {
 // Function for counting salary
 function totalMonthly(Salary) {
 
+    let totalAmount = 15500
     let addToMonthly = (parseInt(Salary) / 12);
-    let totalAmountAfter = + Math.round(addToMonthly);
+    let totalAmountAfter = + Math.round(totalAmount + addToMonthly);
 
     // Change the total monthly color to red on DOM
 
