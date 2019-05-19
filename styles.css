@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    background-color: gray;
+    text-align: center;
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: gray;
+    border: 1px solid black;
+    width: 150px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid black;
+    width: 150px;
+    text-align: center;
+}

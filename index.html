@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,69 @@
     <script src="scripts.js"></script>
     <title>Calculator</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="title-header">
+            <h1>Salary Calculator</h1>
+        </div>
+        <div class="all-inputs">
+            <h2>Add Employee</h2>
+            <input class="inputData" id="inputOne" type="text" placeholder="First Name" required />
+            <input class="inputData" id="inputTwo" type="text" placeholder="Last Name" required />
+            <input class="inputData" id="inputThree" type="number" placeholder="ID number" required />
+            <input class="inputData" id="inputFour" type="text" placeholder="Job Title" required />
+            <input class="inputData" id="inputFive" type="number" placeholder="$Annual Salary" required />
+            <button id="submitButton">Submit</button>
+        </div>
+        <div class="employee-table">
+            <br>
+            <h2>Employees</h2>
+            <table>
+                <thead class="table-head">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Job Title</th>
+                        <th>Annual Salary</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr>
+                        <td>Jen</td>
+                        <td>Barber</td>
+                        <td>4521</td>
+                        <td>Team Lead</td>
+                        <td>$80000</td>
+                        <td><button class="deleteButton">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Maurice</td>
+                        <td>Moss</td>
+                        <td>8724</td>
+                        <td>Support Team</td>
+                        <td>$58000</td>
+                        <td><button class="deleteButton">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Roy</td>
+                        <td>Smith</td>
+                        <td>9623</td>
+                        <td>Quality Assurance</td>
+                        <td>$48000</td>
+                        <td><button class="deleteButton">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div id="total-monthly">
+            Total Monthly: $
+            <span id="total-amount"></span>
+        </div>
+    </div>
 </body>
+
 </html>
