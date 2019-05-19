@@ -1,5 +1,7 @@
 $(document).ready(readyNow)
 
+let arrayTotal = [];
+
 // On page load run this function
 function readyNow() {
 
@@ -13,7 +15,7 @@ function onSubmit() {
 
     // Ask to input all information before running
     if ($('.inputData').val() == '') {
-        alert('Please fill in all the empty fields');
+        alert('Please fill in any empty fields!');
     }
     else {
 
@@ -32,13 +34,14 @@ function onSubmit() {
             <td>` + inputLastName + `</td>
             <td>` + inputIDnumber + `</td>
             <td>` + inputJobTitle + `</td>
-            <td>` + `$` + inputAnnualSalary + `</td>
+            <td class="salary">` + `$` + inputAnnualSalary + `</td>
             <td><button class="deleteButton">Delete</button></td>
         </tr>
         `)
 
         // Delete all data stored in the inputs
 
+        testFun();
         $('.inputData').val('');
 
         // Run totalMonthly function
@@ -81,3 +84,27 @@ function deleteMonthly() {
     console.log('hi');
 
 } // End function for deleting Salary
+
+// test function
+function testFun(){
+
+    const runThru = $('#inputFive').val();
+    
+    arrayTotal.push(runThru);
+    
+    console.log(arrayTotal);
+    
+    testFunner();
+
+}
+
+// test function two
+function testFunner() {
+
+    for (let i = 0; i < arrayTotal.length; i++) {
+        const element = array[i];
+        
+        
+    }
+
+}
