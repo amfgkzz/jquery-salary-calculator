@@ -85,6 +85,7 @@ function pushNewArray() {
 // Function that calculates salary and converts in total monthly
 function calculateMonthly() {
 
+    let useExample = 15500;
     // Parse every string in array
 
     for (let i = 0; i < arrayTotal.length; i++) {
@@ -108,16 +109,6 @@ function calculateMonthly() {
 
     // Show amount on DOM
 
-    $('#total-amount').text(newTotal);
+    $('#total-amount').text(newTotal + useExample);
 
 } // End Function calculator
-
-// Testing function add current salary examples
-function exampleSalaries() {
-
-    let exampleSalary = $('#tDataSalaryOne').data([80000, 58000, 48000]);
-    console.log(exampleSalary);
-
-} // End test function
-
-exampleSalaries();
