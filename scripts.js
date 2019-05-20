@@ -14,10 +14,13 @@ function readyNow() {
 function onSubmit() {
 
     // Ask to input all information before running
+
     if ($('.inputData').val() == '') {
         alert('Please fill in any empty fields!');
     }
     else {
+
+        // Input Variables
 
         const inputFirstName = $('#inputOne').val();
         const inputLastName = $('#inputTwo').val();
@@ -30,23 +33,22 @@ function onSubmit() {
         $('.table-body').append
             (`
         <tr>
-            <td>` + inputFirstName + `</td>
-            <td>` + inputLastName + `</td>
-            <td>` + inputIDnumber + `</td>
-            <td>` + inputJobTitle + `</td>
-            <td class="salary">` + `$` + inputAnnualSalary + `</td>
-            <td><button class="deleteButton">Delete</button></td>
+            <td class="tData">` + inputFirstName + `</td>
+            <td class="tData">` + inputLastName + `</td>
+            <td class="tData">` + inputIDnumber + `</td>
+            <td class="tData">` + inputJobTitle + `</td>
+            <td class="tData">` + `$` + inputAnnualSalary + `</td>
+            <td><button class="deleteClass">Delete</button></td>
         </tr>
         `)
 
+        // Push salary into array
+
+        pushNewArray();
+
         // Delete all data stored in the inputs
 
-        testFun();
         $('.inputData').val('');
-
-        // Run totalMonthly function
-
-        totalMonthly(inputAnnualSalary);
 
     }
 } // End function for on click submit button
@@ -54,50 +56,58 @@ function onSubmit() {
 // Function for on click delete button
 function onDelete() {
 
+    // Delete action
+
     $(this).closest('tr').remove();
 
 } // End function for on click delete button
 
-// Function for counting salary
-function totalMonthly(Salary) {
+// Function for 
 
-    let totalAmount = 15500
-    let addToMonthly = (parseInt(Salary) / 12);
-    let totalAmountAfter = + Math.round(totalAmount + addToMonthly);
 
-    // Change the total monthly color to red on DOM
+// Function that pushes salary into an empty array
+function pushNewArray() {
 
-    if (totalAmountAfter > 20000)
-        $('#total-amount').css('color', 'red');
+    // Salary input variable
 
-    // Change the total monthly on DOM to input
-    $('#total-amount').text(totalAmountAfter);
+    const salaryInput = $('#inputFive').val();
 
-} // End function for counting Salary
+    // Action for pushing into array
 
-// test function
-function testFun() {
+    arrayTotal.push(salaryInput);
 
-    const runThru = $('#inputFive').val();
+    // Run calculate
 
-    arrayTotal.push(runThru);
+    calculateMonthly();
 
-    testFunner();
+} // End push function
 
-}
+// Function that calculates salary and converts in total monthly
+function calculateMonthly() {
 
-// test function two
-function testFunner() {
+    // Parse every string in array
 
     for (let i = 0; i < arrayTotal.length; i++) {
         arrayTotal[i] = parseInt(arrayTotal[i]);
     }
 
+    // Sum all numbers in array
+
     newTotal = arrayTotal.reduce(function (a, b) {
         return a + b;
     })
 
-    console.log(newTotal);
+    // Round number into whole number
 
+    newTotal = Math.round(newTotal / 12);
 
-}
+    // Change color to red if more than 20000
+
+    if (newTotal > 20000)
+        $('#total-amount').css('color', 'red');
+
+    // Show amount on DOM
+
+    $('#total-amount').text(newTotal);
+
+} // End Function calculator

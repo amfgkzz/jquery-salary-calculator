@@ -25,14 +25,18 @@ table {
     border-collapse: collapse;
 }
 
-th {
+#test {
+    background-color: lightgray;
+}
+
+.tHeader {
     background-color: gray;
     border: 1px solid black;
     width: 150px;
     text-align: center;
 }
 
-td {
+.tData {
     border: 1px solid black;
     width: 150px;
     text-align: center;
