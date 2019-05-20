@@ -37,7 +37,7 @@ function onSubmit() {
             <td class="tData">` + inputLastName + `</td>
             <td class="tData">` + inputIDnumber + `</td>
             <td class="tData">` + inputJobTitle + `</td>
-            <td class="tData">` + `$` + inputAnnualSalary + `</td>
+            <td class="tDataSalary">` + `$` + inputAnnualSalary + `</td>
             <td><button class="deleteClass">Delete</button></td>
         </tr>
         `)
@@ -111,3 +111,13 @@ function calculateMonthly() {
     $('#total-amount').text(newTotal);
 
 } // End Function calculator
+
+// Testing function add current salary examples
+function exampleSalaries() {
+
+    let exampleSalary = $('#tDataSalaryOne').text();
+    console.log(exampleSalary);
+
+} // End test function
+
+exampleSalaries();
