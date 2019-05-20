@@ -6,7 +6,7 @@ let arrayTotal = [];
 function readyNow() {
 
     $('#submitButton').on('click', onSubmit);
-    $('.container').on('click', '.deleteButton', onDelete);
+    $('.container').on('click', '.deleteButton', '.deleteClass', onDelete);
 
 }
 
@@ -38,7 +38,7 @@ function onSubmit() {
             <td class="tData">` + inputIDnumber + `</td>
             <td class="tData">` + inputJobTitle + `</td>
             <td class="tDataSalary">` + `$` + inputAnnualSalary + `</td>
-            <td><button class="deleteClass">Delete</button></td>
+            <td class="deleteClass"><button class="deleteButton">Delete</button></td>
         </tr>
         `)
 
@@ -115,7 +115,7 @@ function calculateMonthly() {
 // Testing function add current salary examples
 function exampleSalaries() {
 
-    let exampleSalary = $('#tDataSalaryOne').text();
+    let exampleSalary = $('#tDataSalaryOne').data([80000, 58000, 48000]);
     console.log(exampleSalary);
 
 } // End test function
