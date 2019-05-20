@@ -7,8 +7,8 @@ function readyNow() {
 
     $('#submitButton').on('click', onSubmit);
     $('.container').on('click', '.deleteButton', '.deleteClass', onDelete);
-
 }
+
 
 // Function for on click submit button
 function onSubmit() {
@@ -28,7 +28,7 @@ function onSubmit() {
         const inputJobTitle = $('#inputFour').val();
         const inputAnnualSalary = $('#inputFive').val();
 
-        // Adding a table row
+        // Adding table rows
 
         $('.table-body').append
             (`
@@ -49,9 +49,9 @@ function onSubmit() {
         // Delete all data stored in the inputs
 
         $('.inputData').val('');
-
     }
 } // End function for on click submit button
+
 
 // Function for on click delete button
 function onDelete() {
@@ -61,8 +61,6 @@ function onDelete() {
     $(this).closest('tr').remove();
 
 } // End function for on click delete button
-
-// Function for 
 
 
 // Function that pushes salary into an empty array
@@ -81,6 +79,7 @@ function pushNewArray() {
     calculateMonthly();
 
 } // End push function
+
 
 // Function that calculates salary and converts in total monthly
 function calculateMonthly() {
