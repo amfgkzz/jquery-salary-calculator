@@ -102,13 +102,21 @@ function calculateMonthly() {
 
     newTotal = Math.round(newTotal / 12);
 
+    // Created new variable to store both values
+
+    let totalMonthly = (newTotal + useExample);
+
     // Change color to red if more than 20000
 
-    if (newTotal > 20000)
+    if (totalMonthly > 20000) {
         $('#total-amount').css('color', 'red');
+    }
+    else if (totalMonthly <= 20000) {
+        $('#total-amount').css('color', 'black');
+    }
 
     // Show amount on DOM
 
-    $('#total-amount').text(newTotal + useExample);
+    $('#total-amount').text(totalMonthly);
 
 } // End Function calculator
