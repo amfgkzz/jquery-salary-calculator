@@ -56,9 +56,6 @@ function onDelete() {
 
     $(this).closest('tr').remove();
 
-    // Stretch Goal
-    deleteMonthly();
-
 } // End function for on click delete button
 
 // Function for counting salary
@@ -78,22 +75,13 @@ function totalMonthly(Salary) {
 
 } // End function for counting Salary
 
-// Function for deleting Salary
-function deleteMonthly() {
-
-    console.log('hi');
-
-} // End function for deleting Salary
-
 // test function
-function testFun(){
+function testFun() {
 
     const runThru = $('#inputFive').val();
-    
+
     arrayTotal.push(runThru);
-    
-    console.log(arrayTotal);
-    
+
     testFunner();
 
 }
@@ -101,13 +89,15 @@ function testFun(){
 // test function two
 function testFunner() {
 
-    newTotal = arrayTotal.reduce(function(a,b){
-        let testOne = (parseInt(a) * 1);
-        let testTwo = (parseInt(b) * 1);
-        let testRun = Math.round(testOne + testTwo);
-        console.log(testRun);
+    for (let i = 0; i < arrayTotal.length; i++) {
+        arrayTotal[i] = parseInt(arrayTotal[i]);
+    }
+
+    newTotal = arrayTotal.reduce(function (a, b) {
+        return a + b;
     })
 
+    console.log(newTotal);
 
 
 }
